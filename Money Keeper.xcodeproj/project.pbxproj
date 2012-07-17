@@ -16,6 +16,7 @@
 		D7130CA715B51F17009B7B64 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7130CA515B51F17009B7B64 /* MainStoryboard.storyboard */; };
 		D7130CAA15B51F17009B7B64 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130CA915B51F17009B7B64 /* MasterViewController.m */; };
 		D7130CAD15B51F17009B7B64 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130CAC15B51F17009B7B64 /* DetailViewController.m */; };
+		D7130CB515B523F0009B7B64 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130CB415B523F0009B7B64 /* NewAccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,9 @@
 		D7130CA915B51F17009B7B64 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		D7130CAB15B51F17009B7B64 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D7130CAC15B51F17009B7B64 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D7130CB315B523F0009B7B64 /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountViewController.h; sourceTree = "<group>"; };
+		D7130CB415B523F0009B7B64 /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountViewController.m; sourceTree = "<group>"; };
+		D7130CB615B52B20009B7B64 /* AlertTypeConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertTypeConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,9 @@
 				D7130CA515B51F17009B7B64 /* MainStoryboard.storyboard */,
 				D7130CA815B51F17009B7B64 /* MasterViewController.h */,
 				D7130CA915B51F17009B7B64 /* MasterViewController.m */,
+				D7130CB315B523F0009B7B64 /* NewAccountViewController.h */,
+				D7130CB415B523F0009B7B64 /* NewAccountViewController.m */,
+				D7130CB615B52B20009B7B64 /* AlertTypeConstants.h */,
 				D7130CAB15B51F17009B7B64 /* DetailViewController.h */,
 				D7130CAC15B51F17009B7B64 /* DetailViewController.m */,
 				D7130C9A15B51F17009B7B64 /* Supporting Files */,
@@ -169,6 +176,7 @@
 				D7130CA415B51F17009B7B64 /* AppDelegate.m in Sources */,
 				D7130CAA15B51F17009B7B64 /* MasterViewController.m in Sources */,
 				D7130CAD15B51F17009B7B64 /* DetailViewController.m in Sources */,
+				D7130CB515B523F0009B7B64 /* NewAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

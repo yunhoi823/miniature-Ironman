@@ -29,7 +29,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newAccount:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
@@ -44,8 +44,9 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-- (void)insertNewObject:(id)sender
+- (void)newAccount:(id)sender
 {
+    [self performSegueWithIdentifier:@"NewAccountSegue" sender:self];
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
@@ -109,11 +110,23 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([[segue identifier] isEqualToString:@"NewAccountSegue"]) {
+        [[segue destinationViewController] setDelegate:self];
+    }
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = [_objects objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
+
+#pragma mark NewAccountControllerDelegate
+
+- (void) cancelNewAccount:(NewAccountViewController *)sender
+{
+    [sender dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
 
 @end
