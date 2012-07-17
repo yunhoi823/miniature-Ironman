@@ -23,16 +23,16 @@
 		D7130C9315B51F17009B7B64 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D7130C9515B51F17009B7B64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7130C9715B51F17009B7B64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D7130C9B15B51F17009B7B64 /* Money Keeper-Info.plist */ = {isa = PBXFileReference; path = "Money Keeper-Info.plist"; sourceTree = "<group>"; };
+		D7130C9B15B51F17009B7B64 /* Money Keeper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Money Keeper-Info.plist"; sourceTree = "<group>"; };
 		D7130C9D15B51F17009B7B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D7130C9F15B51F17009B7B64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D7130CA115B51F17009B7B64 /* Money Keeper-Prefix.pch */ = {isa = PBXFileReference; path = "Money Keeper-Prefix.pch"; sourceTree = "<group>"; };
-		D7130CA215B51F17009B7B64 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7130CA115B51F17009B7B64 /* Money Keeper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Money Keeper-Prefix.pch"; sourceTree = "<group>"; };
+		D7130CA215B51F17009B7B64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7130CA315B51F17009B7B64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D7130CA615B51F17009B7B64 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		D7130CA815B51F17009B7B64 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		D7130CA815B51F17009B7B64 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		D7130CA915B51F17009B7B64 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		D7130CAB15B51F17009B7B64 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		D7130CAB15B51F17009B7B64 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D7130CAC15B51F17009B7B64 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
