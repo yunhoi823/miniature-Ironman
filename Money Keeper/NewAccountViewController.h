@@ -12,10 +12,11 @@
 @protocol NewAccountViewControllerDelegate <NSObject>
 
 - (void) cancelNewAccount:(NewAccountViewController *)sender;
+- (void) saveNewAccount:(NewAccountViewController *)sender;
 
 @end
 
-@interface NewAccountViewController : UIViewController <UITextFieldDelegate>
+@interface NewAccountViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *bankName;
 @property (weak, nonatomic) IBOutlet UITextField *accountName;

@@ -80,7 +80,9 @@
     }
     if ([balance doubleValue] == 0.0f) {
         [self presentAlertMessage:@"Your entry for for current balance is $0.00. Are you sure you want to continue?" withErrorType:NewAccountAlertTypeWarning];
+        return;
     }
+    [self.delegate saveNewAccount:self];
 }
 
 - (IBAction)cancelPressed:(id)sender
@@ -102,6 +104,16 @@
         [textField resignFirstResponder];
     }
     return YES;
+}
+
+#pragma mark UIAlertViewDelegate methods
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self.delegate saveNewAccount:self];
+        [alertView dismissWithClickedButtonIndex:buttonIndex animated:NO];
+    }
 }
 
 @end

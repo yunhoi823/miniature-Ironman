@@ -127,6 +127,11 @@
     [sender dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void) saveNewAccount:(NewAccountViewController *)sender
+{
+    [sender dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 
 @end
