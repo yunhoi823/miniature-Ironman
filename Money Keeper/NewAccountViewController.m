@@ -19,7 +19,7 @@
 @synthesize accountName;
 @synthesize currentBalance;
 @synthesize delegate;
-
+// Taiwon added this comment
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
