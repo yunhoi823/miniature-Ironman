@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "NewAccountViewController.h"
+#import "Account.h"
 
 @interface MasterViewController : UITableViewController <NewAccountViewControllerDelegate>
+
 
 @end

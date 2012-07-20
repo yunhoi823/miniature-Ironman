@@ -12,7 +12,7 @@
 @protocol NewAccountViewControllerDelegate <NSObject>
 
 - (void) cancelNewAccount:(NewAccountViewController *)sender;
-- (void) saveNewAccount:(NewAccountViewController *)sender;
+- (void) saveNewAccount:(NewAccountViewController *)sender atBank:(NSString *)bank withAccountName:(NSString *)name withBalance:(double)balance;
 
 @end
 

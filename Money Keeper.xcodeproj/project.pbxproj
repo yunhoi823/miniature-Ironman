@@ -17,6 +17,8 @@
 		D7130CAA15B51F17009B7B64 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130CA915B51F17009B7B64 /* MasterViewController.m */; };
 		D7130CAD15B51F17009B7B64 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130CAC15B51F17009B7B64 /* DetailViewController.m */; };
 		D7130CB515B523F0009B7B64 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130CB415B523F0009B7B64 /* NewAccountViewController.m */; };
+		D7F8377115B8FAB8005A030D /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F8377015B8FAB8005A030D /* Account.m */; };
+		D7F8377415B8FACB005A030D /* AccountActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F8377315B8FACB005A030D /* AccountActivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,11 @@
 		D7130CB315B523F0009B7B64 /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountViewController.h; sourceTree = "<group>"; };
 		D7130CB415B523F0009B7B64 /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountViewController.m; sourceTree = "<group>"; };
 		D7130CB615B52B20009B7B64 /* AlertTypeConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertTypeConstants.h; sourceTree = "<group>"; };
+		D7F8376F15B8FAB8005A030D /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		D7F8377015B8FAB8005A030D /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		D7F8377215B8FACB005A030D /* AccountActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountActivity.h; sourceTree = "<group>"; };
+		D7F8377315B8FACB005A030D /* AccountActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountActivity.m; sourceTree = "<group>"; };
+		D7F8377515B8FCB2005A030D /* AccountActivityConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountActivityConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,7 @@
 		D7130C9915B51F17009B7B64 /* Money Keeper */ = {
 			isa = PBXGroup;
 			children = (
+				D7F8376D15B8FA8A005A030D /* Infrastructure */,
 				D7130CA215B51F17009B7B64 /* AppDelegate.h */,
 				D7130CA315B51F17009B7B64 /* AppDelegate.m */,
 				D7130CA515B51F17009B7B64 /* MainStoryboard.storyboard */,
@@ -108,6 +116,18 @@
 				D7130CA115B51F17009B7B64 /* Money Keeper-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7F8376D15B8FA8A005A030D /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D7F8377515B8FCB2005A030D /* AccountActivityConstants.h */,
+				D7F8376F15B8FAB8005A030D /* Account.h */,
+				D7F8377015B8FAB8005A030D /* Account.m */,
+				D7F8377215B8FACB005A030D /* AccountActivity.h */,
+				D7F8377315B8FACB005A030D /* AccountActivity.m */,
+			);
+			name = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +197,8 @@
 				D7130CAA15B51F17009B7B64 /* MasterViewController.m in Sources */,
 				D7130CAD15B51F17009B7B64 /* DetailViewController.m in Sources */,
 				D7130CB515B523F0009B7B64 /* NewAccountViewController.m in Sources */,
+				D7F8377115B8FAB8005A030D /* Account.m in Sources */,
+				D7F8377415B8FACB005A030D /* AccountActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +310,7 @@
 				D7130CB215B51F17009B7B64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -19,7 +19,7 @@
 @synthesize accountName;
 @synthesize currentBalance;
 @synthesize delegate;
-// Taiwon edited this comment in Taiwon1 branch
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -82,7 +82,7 @@
         [self presentAlertMessage:@"Your entry for for current balance is $0.00. Are you sure you want to continue?" withErrorType:NewAccountAlertTypeWarning];
         return;
     }
-    [self.delegate saveNewAccount:self];
+    [self.delegate saveNewAccount:self atBank:bank withAccountName:account withBalance:[balance doubleValue]];
 }
 
 - (IBAction)cancelPressed:(id)sender
@@ -111,7 +111,7 @@
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        [self.delegate saveNewAccount:self];
+        [self.delegate saveNewAccount:self atBank:self.bankName.text withAccountName:self.accountName.text withBalance:[self.currentBalance.text doubleValue]];
         [alertView dismissWithClickedButtonIndex:buttonIndex animated:NO];
     }
 }

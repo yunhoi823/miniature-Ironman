@@ -11,7 +11,7 @@
 #import "DetailViewController.h"
 
 @interface MasterViewController () {
-    NSMutableArray *_objects;
+    NSMutableArray *_accountList;
 }
 @end
 
@@ -23,6 +23,8 @@
     [super awakeFromNib];
 }
 
+#define MONEYKEEPER_DEFAULTS @"UserAccounts"
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,6 +33,13 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newAccount:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    _accountList = [defaults objectForKey:MONEYKEEPER_DEFAULTS];
+    if (!_accountList) {
+        _accountList = [[NSMutableArray alloc] init];
+        [defaults setObject:_accountList forKey:MONEYKEEPER_DEFAULTS];
+    }
 }
 
 - (void)viewDidUnload
@@ -47,12 +56,13 @@
 - (void)newAccount:(id)sender
 {
     [self performSegueWithIdentifier:@"NewAccountSegue" sender:self];
+    /*
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
     [_objects insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];*/
 }
 
 #pragma mark - Table View
@@ -64,15 +74,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return _accountList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AccountCell"];
 
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    cell.textLabel.text = [[_accountList objectAtIndex:indexPath.row] name];
     return cell;
 }
 
@@ -84,9 +93,11 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [_accountList removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [defaults setObject:_accountList forKey:MONEYKEEPER_DEFAULTS];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
@@ -113,11 +124,6 @@
     if ([[segue identifier] isEqualToString:@"NewAccountSegue"]) {
         [[segue destinationViewController] setDelegate:self];
     }
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = [_objects objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
 }
 
 #pragma mark NewAccountControllerDelegate
@@ -127,9 +133,15 @@
     [sender dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (void) saveNewAccount:(NewAccountViewController *)sender
+- (void) saveNewAccount:(NewAccountViewController *)sender atBank:(NSString *)bank withAccountName:(NSString *)name withBalance:(double)balance
 {
     [sender dismissViewControllerAnimated:YES completion:NULL];
+    Account *newAccount = [[Account alloc] initWithBank:bank withName:name withCurrentBalance:balance];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [_accountList addObject:newAccount];
+    [defaults setObject:_accountList forKey:MONEYKEEPER_DEFAULTS];
+    [self.tableView reloadData];
+    [self.tableView setNeedsDisplay];
 }
 
 
